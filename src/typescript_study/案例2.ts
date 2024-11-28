@@ -1,6 +1,5 @@
 //动态类型提示
 // a=1&b=2
-type QueryStringType<T>=T extends `${infer Param}&${infer Rest}`?MergeValue<ParamParse<Param>,QueryStringType<Rest>>:ParamParse<Param>;
 // a=1,b=2
 type ParamParse<T>=T extends `${infer Key}=${infer Value}`?{
     [k in Key]:Value
